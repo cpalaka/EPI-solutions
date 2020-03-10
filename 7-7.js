@@ -12,6 +12,7 @@ const mapping = {
     "0": [],
 }
 
+let sols = []
 // "2276696"
 function allPossibleStrings(number, sol=[]) {
 
@@ -19,10 +20,12 @@ function allPossibleStrings(number, sol=[]) {
         const letters = mapping[number[0]]
         letters.forEach(l => allPossibleStrings(number.substring(1), sol.concat([l])))
     } else {
-        console.log(sol)
+        // console.log(sol.join(''))
+        sols.push(sol.join(''))
         return
     }
     // recurseNumber()
 }
 
 allPossibleStrings('2276696')
+console.log(sols)
